@@ -1,0 +1,66 @@
+import turtle
+from time import sleep
+
+phase = int(input("??? "))
+directionArray = []
+tempARY=[]
+length = 150
+def tmparrayappend():
+    for i in tempARY:
+        directionArray.append(i)
+
+
+#left = 1   right = 0
+for i in range(phase):
+    directionArray = []
+    tmparrayappend()
+    directionArray.append(1)
+    tmparrayappend()
+    directionArray.append(0)
+    tmparrayappend()
+    directionArray.append(1)
+    tmparrayappend()
+    tempARY = directionArray.copy()
+
+
+
+lengthSPLIT = length*1/(3**phase)
+wn = turtle.Screen()
+
+frankTheTurtle = turtle.Turtle()
+florenceTheTurtle = turtle.Turtle()
+francisTheTurtle = turtle.Turtle()
+florenceTheTurtle.penup()
+francisTheTurtle.penup()
+frankTheTurtle.speed(10)
+francisTheTurtle.speed(10)
+florenceTheTurtle.speed(10)
+francisTheTurtle.left(60)
+francisTheTurtle.forward(length)
+francisTheTurtle.left(180)
+florenceTheTurtle.forward(length)
+florenceTheTurtle.left(120)
+florenceTheTurtle.pendown()
+francisTheTurtle.pendown()
+
+for i in range((4**phase)-1):
+    frankTheTurtle.forward(lengthSPLIT)
+    francisTheTurtle.forward(lengthSPLIT)
+    florenceTheTurtle.forward(lengthSPLIT)
+    #change angle too!!!
+    if not directionArray[i]:
+        frankTheTurtle.left(120)
+        florenceTheTurtle.left(120)
+        francisTheTurtle.left(120)
+        continue
+    frankTheTurtle.right(60)
+    florenceTheTurtle.right(60)
+    francisTheTurtle.right(60)
+frankTheTurtle.forward(lengthSPLIT)
+francisTheTurtle.forward(lengthSPLIT)
+florenceTheTurtle.forward(lengthSPLIT)
+frankTheTurtle.ht()
+francisTheTurtle.ht()
+florenceTheTurtle.ht()
+turtle.done()
+wn.mainloop
